@@ -15,13 +15,30 @@ public class HomeController {
 
     @GetMapping
     @RequestMapping("/")
-    public Map getStatus() {
-        Map map = new HashMap<String, String>();
-        map.put("app-version", appVersion);
-        return map;
+    public Map<String, String> getStatus() {
+        Map<String, String> status = new HashMap<String, String>();
+        status.put("app-version", appVersion);
+        return status;
     }
 
 }
+
+// @RestController
+// public class HomeController {
+//     @Value("${app.version}")
+//     public String appVersion = "1.0.0";
+
+//     @GetMapping
+//     @RequestMapping("/")
+//     public Map<String, String>  getStatus() {
+//         Map<String, String> status = new HashMap<>();
+//         status.put("app-version", appVersion);
+//         return status;
+
+//     }
+
+
+// }
 
 
 
